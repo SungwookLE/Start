@@ -1,0 +1,1 @@
+/usr/bin/cc     CMakeFiles/first.out.dir/LIB_MAT.c.o CMakeFiles/first.out.dir/main.c.o  -o first.out -rdynamic 

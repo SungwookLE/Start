@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/joker1251/Desktop/OWEN/PROJECT/START/LIB_MAT.c
+LIB_MAT.h
+/home/joker1251/Desktop/OWEN/PROJECT/START/LIB_MAT.h
+
+/home/joker1251/Desktop/OWEN/PROJECT/START/LIB_MAT.h
+typedef.h
+/home/joker1251/Desktop/OWEN/PROJECT/START/typedef.h
+
+/home/joker1251/Desktop/OWEN/PROJECT/START/main.c
+stdio.h
+-
+LIB_MAT.h
+/home/joker1251/Desktop/OWEN/PROJECT/START/LIB_MAT.h
+
+/home/joker1251/Desktop/OWEN/PROJECT/START/typedef.h
+
