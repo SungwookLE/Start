@@ -2,17 +2,17 @@
 
 
 
-void functional_code(int32_t func_in)
+void functional_code(int32__t func_in)
 {
 
-	int32_t temp_gain, temp_lookup, temp_sum;
-	static int32_t pre_val;
+	int32__t temp_gain, temp_lookup, temp_sum;
+	static int32__t pre_val;
 	ST_LOOKUP_TABLE_1D LKUP_1D_PARA;
 	static ST_LPF_PARA SYSTEM_PARA;
 	
 
 	LKUP_1D_PARA.CONST_MAP[0][0]=-300;
-	LKUP_1D_PARA.CONST_MAP[0][1]=20000; // ÀÌ°Íµµ ±â¿ï±â ±¸ÇÒ ¶§ µ¥ÀÌÅÍ Å¸ÀÔÀ¸·Î ÀÎÇØ OUT ÂÊÀÇ ½ºÄÉÀÏ¸µÀ» °­Á¦·Î 10¹è UP½ÃÅ´
+	LKUP_1D_PARA.CONST_MAP[0][1]=20000; // ï¿½Ì°Íµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ OUT ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 10ï¿½ï¿½ UPï¿½ï¿½Å´
 
 	LKUP_1D_PARA.CONST_MAP[1][0]=-200;
 	LKUP_1D_PARA.CONST_MAP[1][1]=4000;

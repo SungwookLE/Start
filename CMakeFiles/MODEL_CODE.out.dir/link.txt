@@ -1,0 +1,1 @@
+/usr/bin/cc     CMakeFiles/MODEL_CODE.out.dir/FILE_READ_FOR_DEBUG.c.o CMakeFiles/MODEL_CODE.out.dir/functional_code.c.o CMakeFiles/MODEL_CODE.out.dir/STD_LIB.c.o CMakeFiles/MODEL_CODE.out.dir/main.c.o  -o MODEL_CODE.out -rdynamic 

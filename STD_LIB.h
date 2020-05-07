@@ -17,17 +17,17 @@
 3. SQUARE
 4. LPF
 5. HPF
-6. INTEGRATOR : À¯È¿¼ýÀÚ¿¡·¯°¡ ÀûºÐµÊ¿¡ µû¶ó °ªÀÌ Á¶±Ý ¸¹ÀÌ Æ²¸².
+6. INTEGRATOR : ï¿½ï¿½È¿ï¿½ï¿½ï¿½Ú¿ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ÐµÊ¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Æ²ï¿½ï¿½.
 7. UNIT DELAY 
-8. 1D LOOKUP_TABLE : 2°³ (CLIPPING / Linear EXTRAPOLATION)
-TIP: ±â¿ï±â °è»êÇÒ ¶§ À¯È¿¼ýÀÚ ¿¡·¯·Î ÀÎÇØ Á¤È®µµ°¡ ¶³¾îÁú ¼ö ÀÖÀ¸¹Ç·Î SCALE Àß °í·ÁÇÒ °Í
+8. 1D LOOKUP_TABLE : 2ï¿½ï¿½ (CLIPPING / Linear EXTRAPOLATION)
+TIP: ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½È¿ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ç·ï¿½ SCALE ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
 9. SATURATION
 
 
--- èÇ --
-10. 2D LOOKUP_TABLE : 2D ·è¾÷ÀÌ ÇÊ¿äÇÒ±î.. ¤»¤»¤»¤» ¾²±ä ¾²´Âµ¥.. ÀÌ°Å ¾²¸é ¸ðµ¨ ¸¸µé‹šµµ ±×·¸°Ô ÃßÃµÇÏ´Â ¹æ¹ýÀº ¾Æ´Ï¾î°¡Áö°í
-11. PRODUCT (HIGH PRECISION -> ÀÌ°Ô Á¤È®È÷ ¹«½¼ ÀÇ¹ÌÀÎÁö ÆÄ¾ÇÇØ¾ß ÇÔ 200405)
-12. DIVIDE (HIGH PRECISION -> ÀÌ°Ô Á¤È®È÷ ¹«½¼ ÀÇ¹ÌÀÎÁö ÆÄ¾ÇÇØ¾ß ÇÔ 200405)
+-- ï¿½ï¿½ --
+10. 2D LOOKUP_TABLE : 2D ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½ï¿½Ò±ï¿½.. ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Âµï¿½.. ï¿½Ì°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½é‹šï¿½ï¿½ ï¿½×·ï¿½ï¿½ï¿½ ï¿½ï¿½Ãµï¿½Ï´ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Æ´Ï¾î°¡ï¿½ï¿½ï¿½ï¿½
+11. PRODUCT (HIGH PRECISION -> ï¿½Ì°ï¿½ ï¿½ï¿½È®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ä¾ï¿½ï¿½Ø¾ï¿½ ï¿½ï¿½ 200405)
+12. DIVIDE (HIGH PRECISION -> ï¿½Ì°ï¿½ ï¿½ï¿½È®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ç¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ä¾ï¿½ï¿½Ø¾ï¿½ ï¿½ï¿½ 200405)
 */
 	
 #define ABS(A) A>=0? A:(-A)
@@ -36,61 +36,61 @@ TIP: ±â¿ï±â °è»êÇÒ ¶§ À¯È¿¼ýÀÚ ¿¡·¯·Î ÀÎÇØ Á¤È®µµ°¡ ¶³¾îÁú ¼ö ÀÖÀ¸¹Ç·Î SCALE Àß 
 #define SQUARE(A) (A*A)
 
 typedef struct{
-	int32_t filt_input;
-	int32_t filt_output;
+	int32__t filt_input;
+	int32__t filt_output;
 }ST_LPF_PARA;
 
 typedef struct{
-	int32_t filt_input;
-	int32_t filt_output;
-	int32_t temp;
+	int32__t filt_input;
+	int32__t filt_output;
+	int32__t temp;
 }ST_HPF_PARA;
 
 typedef struct{
-	int32_t filt_input;
-	int32_t filt_output;
+	int32__t filt_input;
+	int32__t filt_output;
 }ST_INTE_PARA;
 
 typedef struct{
-	int32_t cur_input;
-	int32_t ex_value;
-	int32_t ex_output;
+	int32__t cur_input;
+	int32__t ex_value;
+	int32__t ex_output;
 }ST_UNIT_DELAY;
 
 typedef struct{
-	int32_t table_input;
-	int32_t table_output;
-	int32_t CONST_MAP[100][2];
+	int32__t table_input;
+	int32__t table_output;
+	int32__t CONST_MAP[100][2];
 }ST_LOOKUP_TABLE_1D;
 
 /*	@ FUNCTION NAME: 1. LOW PASS FILTER
 	@ DATE         : '20.03.27
 	@ DESCRIPTION  : RES/TAU must be 10^-2 for 10ms LOOP */
-int32_t LIB_LPF(ST_LPF_PARA *LPF_PARA,int16_t TAU,int16_t RES);
+int32__t LIB_LPF(ST_LPF_PARA *LPF_PARA,int16__t TAU,int16__t RES);
 /*	@ FUNCTION NAME: 2. HIGH PASS FILTER
 	@ DATE         : '20.03.27
 	@ DESCRIPTION  : RES/TAU must be 10^2 for 10ms LOOP */
-int32_t LIB_HPF(ST_HPF_PARA *HPF_PARA,int16_t TAU,int16_t RES);
+int32__t LIB_HPF(ST_HPF_PARA *HPF_PARA,int16__t TAU,int16__t RES);
 /*	@ FUNCTION NAME: 3. INTEGRATOR
 	@ DATE         : '20.03.27
 	@ DESCRIPTION  : It works for 10ms LOOP */
-int32_t LIB_INTE(ST_INTE_PARA *INTE_PARA);
+int32__t LIB_INTE(ST_INTE_PARA *INTE_PARA);
 /*	@ FUNCTION NAME: 4. UNIT DELAY
 	@ DATE         : '20.03.27
 	@ DESCRIPTION  : It works for 10ms LOOP */
-int32_t LIB_UNIT_DELAY(ST_UNIT_DELAY *DELAY_PARA);
+int32__t LIB_UNIT_DELAY(ST_UNIT_DELAY *DELAY_PARA);
 /*	@ FUNCTION NAME: 1D LOOKUP_TABLE Using CLIPPING OPTION
 	@ DATE         : '20.03.27
 	@ DESCRIPTION  : It works for 1D LOOK UP CLIPPING OPTION  */
-int32_t LIB_LOOKUP_TABLE_1D_CLIP(ST_LOOKUP_TABLE_1D *LOOKUP_1D, int16_t size_of_map);
+int32__t LIB_LOOKUP_TABLE_1D_CLIP(ST_LOOKUP_TABLE_1D *LOOKUP_1D, int16__t size_of_map);
 /*	@ FUNCTION NAME: 1D LOOKUP_TABLE Using extrapolation OPTION
 	@ DATE         : '20.03.27
 	@ DESCRIPTION  : It works for 1D LOOK UP LINEAR EXTRAPOLATION */
-int32_t LIB_LOOKUP_TABLE_1D_EXTRA(ST_LOOKUP_TABLE_1D *LOOKUP_1D, int16_t size_of_map);
+int32__t LIB_LOOKUP_TABLE_1D_EXTRA(ST_LOOKUP_TABLE_1D *LOOKUP_1D, int16__t size_of_map);
 /*	@ FUNCTION NAME: SATURATION
 	@ DATE         : '20.04.04
 	@ DESCRIPTION  : Upper Under Bound works */
-int32_t LIB_SATURATION(int32_t input, int32_t upper, int32_t under);
+int32__t LIB_SATURATION(int32__t input, int32__t upper, int32__t under);
 
 #endif
 

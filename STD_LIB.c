@@ -6,7 +6,7 @@
 /*	@ FUNCTION NAME: LOW PASS FILTER
 	@ DATE         : '20.03.27
 	@ DESCRIPTION  : RES/TAU must be 10^-2 for 10ms LOOP */
-int32_t LIB_LPF(ST_LPF_PARA *LPF_PARA,int16_t TAU,int16_t RES)
+int32__t LIB_LPF(ST_LPF_PARA *LPF_PARA,int16__t TAU,int16__t RES)
 {
 	if (TAU==0) // DEFENCE DIVIDE ZERO
 		LPF_PARA->filt_output=LPF_PARA->filt_input;
@@ -19,7 +19,7 @@ int32_t LIB_LPF(ST_LPF_PARA *LPF_PARA,int16_t TAU,int16_t RES)
 /*	@ FUNCTION NAME: HIGH PASS FILTER
 	@ DATE         : '20.03.27
 	@ DESCRIPTION  : RES/TAU must be 10^2 for 10ms LOOP */
-int32_t LIB_HPF(ST_HPF_PARA *HPF_PARA,int16_t TAU,int16_t RES)
+int32__t LIB_HPF(ST_HPF_PARA *HPF_PARA,int16__t TAU,int16__t RES)
 {
 	HPF_PARA->filt_output = (TAU*HPF_PARA->temp/(TAU+RES) + TAU*HPF_PARA->filt_input/(TAU+RES));
 	HPF_PARA->temp = HPF_PARA->filt_output - HPF_PARA->filt_input;
@@ -30,10 +30,10 @@ int32_t LIB_HPF(ST_HPF_PARA *HPF_PARA,int16_t TAU,int16_t RES)
 /*	@ FUNCTION NAME: INTEGRATOR
 	@ DATE         : '20.03.27
 	@ DESCRIPTION  : It works for 10ms LOOP */
-int32_t LIB_INTE(ST_INTE_PARA *INTE_PARA)
+int32__t LIB_INTE(ST_INTE_PARA *INTE_PARA)
 {
 	INTE_PARA->filt_output=(INTE_PARA->filt_input)*1/100+INTE_PARA->filt_output ;
-	// Á¤¹Ğµµ ¿ÀÂ÷ ‹š¹®¿¡ ´©Àû ÀûºĞ¿ÀÂ÷°¡ Á¸ÀçÇÏ³×.. ÀÌ·±°Å ¾îÄÉÇÏ¸é ÁÁÀ»±î.
+	// ï¿½ï¿½ï¿½Ğµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ğ¿ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï³ï¿½.. ï¿½Ì·ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½.
 
 	return INTE_PARA->filt_output;
 }
@@ -41,7 +41,7 @@ int32_t LIB_INTE(ST_INTE_PARA *INTE_PARA)
 /*	@ FUNCTION NAME: UNIT DELAY
 	@ DATE         : '20.03.27
 	@ DESCRIPTION  : It works for 10ms LOOP */
-int32_t LIB_UNIT_DELAY(ST_UNIT_DELAY *DELAY_PARA)
+int32__t LIB_UNIT_DELAY(ST_UNIT_DELAY *DELAY_PARA)
 {
 	DELAY_PARA->ex_output=DELAY_PARA->ex_value;
 	DELAY_PARA->ex_value=DELAY_PARA->cur_input;
@@ -52,17 +52,17 @@ int32_t LIB_UNIT_DELAY(ST_UNIT_DELAY *DELAY_PARA)
 /*	@ FUNCTION NAME: 1D LOOKUP_TABLE Using CLIPPING OPTION
 	@ DATE         : '20.03.27
 	@ DESCRIPTION  : It works for 1D LOOK UP CLIPPING OPTION  */
-int32_t LIB_LOOKUP_TABLE_1D_CLIP(ST_LOOKUP_TABLE_1D *LOOKUP_1D, int16_t size_of_map)
+int32__t LIB_LOOKUP_TABLE_1D_CLIP(ST_LOOKUP_TABLE_1D *LOOKUP_1D, int16__t size_of_map)
 {
 
 	/*	X-axis: input
 		Y-axis: output --> ONE TO ONE MATCHING */ 
-	int16_t start = 0;
-	int16_t end = size_of_map-1;
-	int16_t mid;
+	int16__t start = 0;
+	int16__t end = size_of_map-1;
+	int16__t mid;
 
-	int16_t input_MIN = LOOKUP_1D->CONST_MAP[0][0];
-	int16_t input_MAX = LOOKUP_1D->CONST_MAP[end][0];
+	int16__t input_MIN = LOOKUP_1D->CONST_MAP[0][0];
+	int16__t input_MAX = LOOKUP_1D->CONST_MAP[end][0];
 
 	if (LOOKUP_1D->table_input <= input_MIN)
 	{ // input MIN bound:: FLAT
@@ -104,17 +104,17 @@ int32_t LIB_LOOKUP_TABLE_1D_CLIP(ST_LOOKUP_TABLE_1D *LOOKUP_1D, int16_t size_of_
 /*	@ FUNCTION NAME: 1D LOOKUP_TABLE Using extrapolation OPTION
 	@ DATE         : '20.03.27
 	@ DESCRIPTION  : It works for 1D LOOK UP LINEAR EXTRAPOLATION */
-int32_t LIB_LOOKUP_TABLE_1D_EXTRA(ST_LOOKUP_TABLE_1D *LOOKUP_1D, int16_t size_of_map)
+int32__t LIB_LOOKUP_TABLE_1D_EXTRA(ST_LOOKUP_TABLE_1D *LOOKUP_1D, int16__t size_of_map)
 {
 
 	/*	X-axis: input
 		Y-axis: output --> ONE TO ONE MATCHING */ 
-	int16_t start = 0;
-	int16_t end = size_of_map-1;
-	int16_t mid;
+	int16__t start = 0;
+	int16__t end = size_of_map-1;
+	int16__t mid;
 
-	int16_t input_MIN = LOOKUP_1D->CONST_MAP[0][0];
-	int16_t input_MAX = LOOKUP_1D->CONST_MAP[end][0];
+	int16__t input_MIN = LOOKUP_1D->CONST_MAP[0][0];
+	int16__t input_MAX = LOOKUP_1D->CONST_MAP[end][0];
 
 	if (LOOKUP_1D->table_input <= input_MIN)
 	{ // input MIN bound:: EXTRA
@@ -156,9 +156,9 @@ int32_t LIB_LOOKUP_TABLE_1D_EXTRA(ST_LOOKUP_TABLE_1D *LOOKUP_1D, int16_t size_of
 /*	@ FUNCTION NAME: SATURATION
 	@ DATE         : '20.04.04
 	@ DESCRIPTION  : Upper Under Bound works */
-int32_t LIB_SATURATION(int32_t input, int32_t upper, int32_t under)
+int32__t LIB_SATURATION(int32__t input, int32__t upper, int32__t under)
 {
-	int32_t output;
+	int32__t output;
 	input > upper? (output=upper):(input < under? (output=under):(output=input));
 	return output;
 }

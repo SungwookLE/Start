@@ -1,43 +1,33 @@
-#ifndef _TYPE_DEFS_H_
-#define _TYPE_DEFS_H_
+#ifndef _TYPE_DEFS_H__
+#define _TYPE_DEFS_H__
 
 	// 8byte
-	typedef long long int int32_t;
+	typedef long long int int32__t;
 	// 4byte
-	typedef int int16_t;
+	typedef int int16__t;
+
+	// 4byte
+	typedef float float16__t;
+	// 8byte
+	typedef double double32__t;
 
 	// 8byte
-	typedef long float float32_t;
+	typedef long long unsigned int uint32__t;
 	// 4byte
-	typedef float float16_t;
-	// 8byte
-	typedef double double32_t;
-
-	// 8byte
-	typedef long long unsigned int uint32_t;
-	// 4byte
-	typedef unsigned int uint16_t;
+	typedef unsigned int uint16__t;
 
 	
 	
-	/* char typeÀº 1byteÀÓ */
+	/* char typeï¿½ï¿½ 1byteï¿½ï¿½ */
 	//typedef char char8_t; // -128 ~ 127
 	//typedef unsigned char uchar8_t; // 0~255
 
-	/* int typeÀº 4byteÀÓ */
+	/* int typeï¿½ï¿½ 4byteï¿½ï¿½ */
 	//typedef int int32_t;
 	//typedef unsigned int uint32_t;
 
-	/* long long typeÀº 8byteÀÓ */
+	/* long long typeï¿½ï¿½ 8byteï¿½ï¿½ */
 	//typedef long long int int64_t;
 	//typedef long long unsigned int uint64_t;
-	
-	
-
-
-
-
-
-
 
 #endif

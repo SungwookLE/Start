@@ -5,17 +5,17 @@
 #include "FILE_READ_FOR_DEBUG.h"
 #include "functional_code.h"
 
-	int32_t file_read;
-	int32_t file_write;
-	int32_t sys_out;
+	int32__t file_read;
+	int32__t file_write;
+	int32__t sys_out;
 	
 
-int main(){
+int main(int argc, char *argv[]){
 	
 	int i=0;
 
-	FILE *fp1 = fopen("SINE_SINE.txt","r");
-	FILE *fp2 = fopen("OUT.txt","w");
+	FILE *fp1 = fopen(argv[1],"r");
+	FILE *fp2 = fopen(argv[2],"w");
 	
 	static ST_LPF_PARA LPF_PARA;
 	static ST_HPF_PARA HPF_PARA;
@@ -24,7 +24,7 @@ int main(){
 	ST_LOOKUP_TABLE_1D LKUP_1D_PARA;
 
 	LKUP_1D_PARA.CONST_MAP[0][0]=-300;
-	LKUP_1D_PARA.CONST_MAP[0][1]=20000; // ÀÌ°Íµµ ±â¿ï±â ±¸ÇÒ ¶§ µ¥ÀÌÅÍ Å¸ÀÔÀ¸·Î ÀÎÇØ OUT ÂÊÀÇ ½ºÄÉÀÏ¸µÀ» °­Á¦·Î 10¹è UP½ÃÅ´
+	LKUP_1D_PARA.CONST_MAP[0][1]=20000; // ï¿½Ì°Íµï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¸ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ OUT ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 10ï¿½ï¿½ UPï¿½ï¿½Å´
 
 	LKUP_1D_PARA.CONST_MAP[1][0]=-200;
 	LKUP_1D_PARA.CONST_MAP[1][1]=4000;
@@ -42,7 +42,7 @@ int main(){
 		file_read_for_debug(fp1);
 		LPF_PARA.filt_input=file_read; // 10^2
 		HPF_PARA.filt_input=file_read; // 10^2
-		INTE_PARA.filt_input=file_read*SQUARE(10); // 10^2 --> ÀûºÐ ´©Àû¿¡·¯ (1/100) À» ÁÙÀÌ±â À§ÇØ¼± ÃÖ¼Ò ÀÎÇ²µ¥ÀÌÅÍ°¡ ½ÇÈ¿ SF°¡ (10^2) ÀÌ»óÀÌ¾î¾ß °Ú±º. 
+		INTE_PARA.filt_input=file_read*SQUARE(10); // 10^2 --> ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ (1/100) ï¿½ï¿½ ï¿½ï¿½ï¿½Ì±ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½Ö¼ï¿½ ï¿½ï¿½Ç²ï¿½ï¿½ï¿½ï¿½ï¿½Í°ï¿½ ï¿½ï¿½È¿ SFï¿½ï¿½ (10^2) ï¿½Ì»ï¿½ï¿½Ì¾ï¿½ï¿½ ï¿½Ú±ï¿½. 
 		DELAY_PARA.cur_input=file_read; // 10^2
 		LKUP_1D_PARA.table_input=file_read;
 		
@@ -53,8 +53,7 @@ int main(){
 		//file_write=LIB_SATURATION(LIB_LOOKUP_TABLE_1D_EXTRA(&LKUP_1D_PARA,4)/10 , 100, -100);	
 		functional_code(file_read);
 		file_write=sys_out;
-		
-		
+	
 		file_write_for_debug(fp2);
 	}
 
