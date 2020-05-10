@@ -5,7 +5,7 @@
 #include <math.h>
 
 /* 
-@ AUTHOR	  : Sungwook LEE (sungwook.Lee@hyundai.com)
+@ AUTHOR	  : Sungwook LEE 
 @ DATA		  : '20.03.27
 @ DESCRIPTION : STANDARD MATLAB SIMULINK LIBRARY FUNCTION
 

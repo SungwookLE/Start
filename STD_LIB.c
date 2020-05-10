@@ -1,6 +1,6 @@
 #include "STD_LIB.h"
 
-/*	@ AUTHOR	  : Sungwook LEE (sungwook.Lee@hyundai.com)
+/*	@ AUTHOR	  : Sungwook LEE 
 	@ DESCRIPTION : STANDARD MATLAB SIMULINK LIBRARY FUNCTION */
 
 /*	@ FUNCTION NAME: LOW PASS FILTER
@@ -33,7 +33,7 @@ int32__t LIB_HPF(ST_HPF_PARA *HPF_PARA,int16__t TAU,int16__t RES)
 int32__t LIB_INTE(ST_INTE_PARA *INTE_PARA)
 {
 	INTE_PARA->filt_output=(INTE_PARA->filt_input)*1/100+INTE_PARA->filt_output ;
-	// ���е� ���� ������ ���� ���п����� �����ϳ�.. �̷��� �����ϸ� ������.
+	
 
 	return INTE_PARA->filt_output;
 }
@@ -162,12 +162,3 @@ int32__t LIB_SATURATION(int32__t input, int32__t upper, int32__t under)
 	input > upper? (output=upper):(input < under? (output=under):(output=input));
 	return output;
 }
-
-
-
-
-
-
-
-
-	
